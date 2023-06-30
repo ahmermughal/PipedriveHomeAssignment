@@ -12,6 +12,9 @@
 		AEF205762A4ED80700CA99D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF205752A4ED80700CA99D1 /* Assets.xcassets */; };
 		AEF205792A4ED80700CA99D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEF205772A4ED80700CA99D1 /* LaunchScreen.storyboard */; };
 		AEF205862A4ED96600CA99D1 /* PeopleListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF205852A4ED96600CA99D1 /* PeopleListVC.swift */; };
+		AEF205892A4EDAF200CA99D1 /* PeopleListContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF205882A4EDAF200CA99D1 /* PeopleListContentView.swift */; };
+		AEF2058C2A4EDC5800CA99D1 /* StringConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF2058B2A4EDC5800CA99D1 /* StringConstant.swift */; };
+		AEF2058F2A4EDDB400CA99D1 /* PeopleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF2058E2A4EDDB400CA99D1 /* PeopleListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		AEF205782A4ED80700CA99D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AEF2057A2A4ED80700CA99D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEF205852A4ED96600CA99D1 /* PeopleListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListVC.swift; sourceTree = "<group>"; };
+		AEF205882A4EDAF200CA99D1 /* PeopleListContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListContentView.swift; sourceTree = "<group>"; };
+		AEF2058B2A4EDC5800CA99D1 /* StringConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstant.swift; sourceTree = "<group>"; };
+		AEF2058E2A4EDDB400CA99D1 /* PeopleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 		AEF2056B2A4ED80700CA99D1 /* PipedriveTakeHome */ = {
 			isa = PBXGroup;
 			children = (
+				AEF2058A2A4EDC3200CA99D1 /* Resource */,
 				AEF205812A4ED88400CA99D1 /* Source */,
 				AEF205802A4ED87000CA99D1 /* Support */,
 				AEF2057A2A4ED80700CA99D1 /* Info.plist */,
@@ -91,6 +98,8 @@
 		AEF205832A4ED89500CA99D1 /* PeopleList */ = {
 			isa = PBXGroup;
 			children = (
+				AEF2058D2A4EDD9E00CA99D1 /* ViewModel */,
+				AEF205872A4EDAD000CA99D1 /* View */,
 				AEF205842A4ED95200CA99D1 /* VC */,
 			);
 			path = PeopleList;
@@ -102,6 +111,30 @@
 				AEF205852A4ED96600CA99D1 /* PeopleListVC.swift */,
 			);
 			path = VC;
+			sourceTree = "<group>";
+		};
+		AEF205872A4EDAD000CA99D1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AEF205882A4EDAF200CA99D1 /* PeopleListContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AEF2058A2A4EDC3200CA99D1 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				AEF2058B2A4EDC5800CA99D1 /* StringConstant.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		AEF2058D2A4EDD9E00CA99D1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AEF2058E2A4EDDB400CA99D1 /* PeopleListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,8 +208,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEF2056D2A4ED80700CA99D1 /* AppDelegate.swift in Sources */,
+				AEF2058F2A4EDDB400CA99D1 /* PeopleListViewModel.swift in Sources */,
+				AEF205892A4EDAF200CA99D1 /* PeopleListContentView.swift in Sources */,
 				AEF205862A4ED96600CA99D1 /* PeopleListVC.swift in Sources */,
 				AEF2056F2A4ED80700CA99D1 /* SceneDelegate.swift in Sources */,
+				AEF2058C2A4EDC5800CA99D1 /* StringConstant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
