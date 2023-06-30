@@ -42,6 +42,7 @@ class PersonCell: UITableViewCell {
     func set(person: Person){
         nameLabel.text = person.name
         organizationLabel.text = person.organizationName ?? "NA"
+        profileImageView.setImageWithUrl(url: person.picture?.pictures?.smallImage ?? "")
     }
     
     
