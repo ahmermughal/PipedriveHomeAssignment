@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class PeopleListVC: UIViewController {
+class PeopleListVC: DataLoadingViewController {
 
     private let contentView = PeopleListContentView()
     
@@ -45,7 +45,6 @@ class PeopleListVC: UIViewController {
         
         viewModel.getPeople()
         
-        
     }
     
     
@@ -63,6 +62,12 @@ class PeopleListVC: UIViewController {
             .sink(receiveValue: handlePeopleListData)
             .store(in: &subscriptions)
         
+        viewModel.$showLoader
+            .subscribe(on: DispatchQueue.main)
+            .compactMap{$0}
+            .sink(receiveValue: handleShowLoader)
+            .store(in: &subscriptions)
+        
     }
     
     private func configureTableView(){
@@ -70,7 +75,7 @@ class PeopleListVC: UIViewController {
         contentView.tableView.register(PersonCell.self, forCellReuseIdentifier: PersonCell.reuseID)
                 
         contentView.tableView.separatorStyle = .none
-
+        
     }
     
     private func configureDataSource() {
@@ -86,6 +91,14 @@ class PeopleListVC: UIViewController {
     
     private func handlePeopleListData(listData: [Person]){
        updateData(on: listData)
+    }
+    
+    private func handleShowLoader(show: Bool){
+        if show{
+            showLoadingView()
+        }else{
+            dismissLoadingView()
+        }
     }
     
     private func updateData(on list: [Person]) {

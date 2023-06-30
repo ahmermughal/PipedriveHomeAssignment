@@ -15,11 +15,14 @@ enum Section{
 class PeopleListViewModel{
     
     @Published private(set) var peopleList: [Person] = []
+    @Published private(set) var showLoader : Bool?
+
     
     private var subscriptions: [AnyCancellable] = []
     
     func getPeople(){
-        
+        showLoader = true
+
         NetworkManager.shared.getAllPersons()
             .sink(receiveCompletion: handleCompletion, receiveValue: handlePeopleResponse)
             .store(in: &subscriptions)
@@ -33,6 +36,7 @@ class PeopleListViewModel{
     }
     
     private func handleCompletion(completion: Subscribers.Completion<NetworkError>){
+        showLoader = false
         print(completion)
     }
     

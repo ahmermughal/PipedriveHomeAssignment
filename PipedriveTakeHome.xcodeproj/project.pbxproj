@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE1DC4B82A4F69C000835FB2 /* DataLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DC4B72A4F69C000835FB2 /* DataLoadingViewController.swift */; };
 		AEF2056D2A4ED80700CA99D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF2056C2A4ED80700CA99D1 /* AppDelegate.swift */; };
 		AEF2056F2A4ED80700CA99D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF2056E2A4ED80700CA99D1 /* SceneDelegate.swift */; };
 		AEF205762A4ED80700CA99D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF205752A4ED80700CA99D1 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE1DC4B72A4F69C000835FB2 /* DataLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoadingViewController.swift; sourceTree = "<group>"; };
 		AEF205692A4ED80700CA99D1 /* PipedriveTakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PipedriveTakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF2056C2A4ED80700CA99D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEF2056E2A4ED80700CA99D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE1DC4B52A4F69A300835FB2 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				AE1DC4B62A4F69AB00835FB2 /* VC */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		AE1DC4B62A4F69AB00835FB2 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				AE1DC4B72A4F69C000835FB2 /* DataLoadingViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
 		AEF205602A4ED80700CA99D1 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +125,7 @@
 		AEF205812A4ED88400CA99D1 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				AE1DC4B52A4F69A300835FB2 /* Custom */,
 				AEF976492A4F047500C91E99 /* Extensions */,
 				AEF2059A2A4EF54D00CA99D1 /* Managers */,
 				AEF205822A4ED88F00CA99D1 /* Modules */,
@@ -331,6 +350,7 @@
 				AEF2058F2A4EDDB400CA99D1 /* PeopleListViewModel.swift in Sources */,
 				AEF205892A4EDAF200CA99D1 /* PeopleListContentView.swift in Sources */,
 				AEF205862A4ED96600CA99D1 /* PeopleListVC.swift in Sources */,
+				AE1DC4B82A4F69C000835FB2 /* DataLoadingViewController.swift in Sources */,
 				AEF205992A4EF09500CA99D1 /* PersonsResponse.swift in Sources */,
 				AEF2056F2A4ED80700CA99D1 /* SceneDelegate.swift in Sources */,
 				AEF205962A4EE45600CA99D1 /* ViewSizeConstant.swift in Sources */,
@@ -412,7 +432,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -466,7 +486,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
