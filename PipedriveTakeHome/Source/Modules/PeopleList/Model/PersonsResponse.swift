@@ -21,8 +21,8 @@ struct PersonsResponse : Codable{
     }
 }
 
-struct Person : Codable {
-    
+struct Person : Codable, Hashable {
+   
     let id : Int
     let name : String?
     let organizationName : String?
@@ -41,7 +41,7 @@ struct Person : Codable {
     
 }
 
-struct PersonContact : Codable {
+struct PersonContact : Codable, Hashable {
     
     let label : String?
     let value : String?
@@ -55,13 +55,14 @@ struct PersonContact : Codable {
     
 }
 
-struct PersonPicture : Codable {
+struct PersonPicture : Codable, Hashable {
     
     let pictures : PictureItem?
     
+    
 }
 
-struct PictureItem : Codable {
+struct PictureItem : Codable, Hashable {
     
     let smallImage : String?
     let largeImage : String?

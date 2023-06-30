@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 enum Section{
     case main
@@ -13,13 +14,26 @@ enum Section{
 
 class PeopleListViewModel{
     
-    @Published private(set) var peopleList: [String] = []
-
+    @Published private(set) var peopleList: [Person] = []
+    
+    private var subscriptions: [AnyCancellable] = []
     
     func getPeople(){
         
-        peopleList = ["Test 1", "Test 2", "Test 3", "Test 4", "Test 5"]
+        NetworkManager.shared.getAllPersons()
+            .sink(receiveCompletion: handleCompletion, receiveValue: handlePeopleResponse)
+            .store(in: &subscriptions)
         
+    }
+    
+    private func handlePeopleResponse(response: PersonsResponse){
+        
+        peopleList.append(contentsOf: response.data)
+        
+    }
+    
+    private func handleCompletion(completion: Subscribers.Completion<NetworkError>){
+        print(completion)
     }
     
 }

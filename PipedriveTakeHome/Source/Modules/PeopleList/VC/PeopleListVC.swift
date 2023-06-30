@@ -14,7 +14,7 @@ class PeopleListVC: UIViewController {
     
     private var subscriptions: [AnyCancellable] = []
 
-    private var dataSource: UITableViewDiffableDataSource<Section, String>!
+    private var dataSource: UITableViewDiffableDataSource<Section, Person>!
     
     private let viewModel : PeopleListViewModel
     
@@ -45,14 +45,6 @@ class PeopleListVC: UIViewController {
         
         viewModel.getPeople()
         
-        NetworkManager.shared.getAllPersons()
-            .sink { result in
-                print("Result: \(result)")
-            } receiveValue: { response in
-                print("Response: \(response)")
-            }
-            .store(in: &subscriptions)
-
         
     }
     
@@ -60,6 +52,8 @@ class PeopleListVC: UIViewController {
     private func configureVC(){
         
         title = StringConstant.people
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
         
     }
     
@@ -75,26 +69,27 @@ class PeopleListVC: UIViewController {
         
         contentView.tableView.register(PersonCell.self, forCellReuseIdentifier: PersonCell.reuseID)
                 
+        contentView.tableView.separatorStyle = .none
+
     }
     
     private func configureDataSource() {
         dataSource = UITableViewDiffableDataSource(tableView: contentView.tableView, cellProvider: { tableView, indexPath, value in
             let cell = tableView.dequeueReusableCell(withIdentifier: PersonCell.reuseID, for: indexPath) as! PersonCell
             
-            /// Set the character data for the cell
-            cell.set(name: value, org: "Test1")
+            cell.set(person: value)
             
             return cell
         })
     }
     
     
-    private func handlePeopleListData(listData: [String]){
+    private func handlePeopleListData(listData: [Person]){
        updateData(on: listData)
     }
     
-    private func updateData(on list: [String]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, String>()
+    private func updateData(on list: [Person]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Person>()
         
         /// Append the main section and its items to the snapshot
         snapshot.appendSections([.main])

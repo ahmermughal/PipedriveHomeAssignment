@@ -39,9 +39,9 @@ class PersonCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func set(name: String, org: String){
-        nameLabel.text = name
-        organizationLabel.text = org
+    func set(person: Person){
+        nameLabel.text = person.name
+        organizationLabel.text = person.organizationName ?? "NA"
     }
     
     
