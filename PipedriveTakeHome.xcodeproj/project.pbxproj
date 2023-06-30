@@ -9,21 +9,19 @@
 /* Begin PBXBuildFile section */
 		AEF2056D2A4ED80700CA99D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF2056C2A4ED80700CA99D1 /* AppDelegate.swift */; };
 		AEF2056F2A4ED80700CA99D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF2056E2A4ED80700CA99D1 /* SceneDelegate.swift */; };
-		AEF205712A4ED80700CA99D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF205702A4ED80700CA99D1 /* ViewController.swift */; };
-		AEF205742A4ED80700CA99D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEF205722A4ED80700CA99D1 /* Main.storyboard */; };
 		AEF205762A4ED80700CA99D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF205752A4ED80700CA99D1 /* Assets.xcassets */; };
 		AEF205792A4ED80700CA99D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEF205772A4ED80700CA99D1 /* LaunchScreen.storyboard */; };
+		AEF205862A4ED96600CA99D1 /* PeopleListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF205852A4ED96600CA99D1 /* PeopleListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AEF205692A4ED80700CA99D1 /* PipedriveTakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PipedriveTakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF2056C2A4ED80700CA99D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEF2056E2A4ED80700CA99D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AEF205702A4ED80700CA99D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AEF205732A4ED80700CA99D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AEF205752A4ED80700CA99D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AEF205782A4ED80700CA99D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AEF2057A2A4ED80700CA99D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEF205852A4ED96600CA99D1 /* PeopleListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +54,54 @@
 		AEF2056B2A4ED80700CA99D1 /* PipedriveTakeHome */ = {
 			isa = PBXGroup;
 			children = (
-				AEF2056C2A4ED80700CA99D1 /* AppDelegate.swift */,
-				AEF2056E2A4ED80700CA99D1 /* SceneDelegate.swift */,
-				AEF205702A4ED80700CA99D1 /* ViewController.swift */,
-				AEF205722A4ED80700CA99D1 /* Main.storyboard */,
-				AEF205752A4ED80700CA99D1 /* Assets.xcassets */,
-				AEF205772A4ED80700CA99D1 /* LaunchScreen.storyboard */,
+				AEF205812A4ED88400CA99D1 /* Source */,
+				AEF205802A4ED87000CA99D1 /* Support */,
 				AEF2057A2A4ED80700CA99D1 /* Info.plist */,
 			);
 			path = PipedriveTakeHome;
+			sourceTree = "<group>";
+		};
+		AEF205802A4ED87000CA99D1 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				AEF2056C2A4ED80700CA99D1 /* AppDelegate.swift */,
+				AEF2056E2A4ED80700CA99D1 /* SceneDelegate.swift */,
+				AEF205752A4ED80700CA99D1 /* Assets.xcassets */,
+				AEF205772A4ED80700CA99D1 /* LaunchScreen.storyboard */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		AEF205812A4ED88400CA99D1 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				AEF205822A4ED88F00CA99D1 /* Modules */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		AEF205822A4ED88F00CA99D1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				AEF205832A4ED89500CA99D1 /* PeopleList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		AEF205832A4ED89500CA99D1 /* PeopleList */ = {
+			isa = PBXGroup;
+			children = (
+				AEF205842A4ED95200CA99D1 /* VC */,
+			);
+			path = PeopleList;
+			sourceTree = "<group>";
+		};
+		AEF205842A4ED95200CA99D1 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				AEF205852A4ED96600CA99D1 /* PeopleListVC.swift */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +164,6 @@
 			files = (
 				AEF205792A4ED80700CA99D1 /* LaunchScreen.storyboard in Resources */,
 				AEF205762A4ED80700CA99D1 /* Assets.xcassets in Resources */,
-				AEF205742A4ED80700CA99D1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +174,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEF205712A4ED80700CA99D1 /* ViewController.swift in Sources */,
 				AEF2056D2A4ED80700CA99D1 /* AppDelegate.swift in Sources */,
+				AEF205862A4ED96600CA99D1 /* PeopleListVC.swift in Sources */,
 				AEF2056F2A4ED80700CA99D1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +183,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AEF205722A4ED80700CA99D1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AEF205732A4ED80700CA99D1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AEF205772A4ED80700CA99D1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,7 +320,6 @@
 				INFOPLIST_FILE = PipedriveTakeHome/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +347,6 @@
 				INFOPLIST_FILE = PipedriveTakeHome/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
