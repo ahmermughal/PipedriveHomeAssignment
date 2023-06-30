@@ -15,6 +15,8 @@
 		AEF205892A4EDAF200CA99D1 /* PeopleListContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF205882A4EDAF200CA99D1 /* PeopleListContentView.swift */; };
 		AEF2058C2A4EDC5800CA99D1 /* StringConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF2058B2A4EDC5800CA99D1 /* StringConstant.swift */; };
 		AEF2058F2A4EDDB400CA99D1 /* PeopleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF2058E2A4EDDB400CA99D1 /* PeopleListViewModel.swift */; };
+		AEF205942A4EE29300CA99D1 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF205932A4EE29300CA99D1 /* PersonCell.swift */; };
+		AEF205962A4EE45600CA99D1 /* ViewSizeConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF205952A4EE45600CA99D1 /* ViewSizeConstant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		AEF205882A4EDAF200CA99D1 /* PeopleListContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListContentView.swift; sourceTree = "<group>"; };
 		AEF2058B2A4EDC5800CA99D1 /* StringConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstant.swift; sourceTree = "<group>"; };
 		AEF2058E2A4EDDB400CA99D1 /* PeopleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewModel.swift; sourceTree = "<group>"; };
+		AEF205932A4EE29300CA99D1 /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		AEF205952A4EE45600CA99D1 /* ViewSizeConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSizeConstant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +120,8 @@
 		AEF205872A4EDAD000CA99D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AEF205882A4EDAF200CA99D1 /* PeopleListContentView.swift */,
+				AEF205922A4EE25D00CA99D1 /* Cell */,
+				AEF205912A4EE25200CA99D1 /* ContentView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				AEF2058B2A4EDC5800CA99D1 /* StringConstant.swift */,
+				AEF205952A4EE45600CA99D1 /* ViewSizeConstant.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -135,6 +141,22 @@
 				AEF2058E2A4EDDB400CA99D1 /* PeopleListViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AEF205912A4EE25200CA99D1 /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				AEF205882A4EDAF200CA99D1 /* PeopleListContentView.swift */,
+			);
+			path = ContentView;
+			sourceTree = "<group>";
+		};
+		AEF205922A4EE25D00CA99D1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AEF205932A4EE29300CA99D1 /* PersonCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,7 +234,9 @@
 				AEF205892A4EDAF200CA99D1 /* PeopleListContentView.swift in Sources */,
 				AEF205862A4ED96600CA99D1 /* PeopleListVC.swift in Sources */,
 				AEF2056F2A4ED80700CA99D1 /* SceneDelegate.swift in Sources */,
+				AEF205962A4EE45600CA99D1 /* ViewSizeConstant.swift in Sources */,
 				AEF2058C2A4EDC5800CA99D1 /* StringConstant.swift in Sources */,
+				AEF205942A4EE29300CA99D1 /* PersonCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -62,7 +62,7 @@ class PeopleListVC: UIViewController {
     
     private func configureTableView(){
         
-        contentView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "TestReuseID")
+        contentView.tableView.register(PersonCell.self, forCellReuseIdentifier: PersonCell.reuseID)
         
         
         contentView.tableView.delegate = self
@@ -86,8 +86,9 @@ extension PeopleListVC : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "TestReuseID"){
-            cell.textLabel?.text = viewModel.peopleList[indexPath.row]
+        if let cell = tableView.dequeueReusableCell(withIdentifier: PersonCell.reuseID) as? PersonCell{
+
+            cell.set(name: viewModel.peopleList[indexPath.row], org: "Test1")
             return cell
         }else{
             
