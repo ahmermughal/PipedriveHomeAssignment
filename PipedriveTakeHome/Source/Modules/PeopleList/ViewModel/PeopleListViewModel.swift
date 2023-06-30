@@ -7,6 +7,9 @@
 
 import Foundation
 
+enum Section{
+    case main
+}
 
 class PeopleListViewModel{
     

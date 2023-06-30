@@ -14,6 +14,7 @@ class PeopleListVC: UIViewController {
     
     private var subscriptions: [AnyCancellable] = []
 
+    private var dataSource: UITableViewDiffableDataSource<Section, String>!
     
     private let viewModel : PeopleListViewModel
     
@@ -39,6 +40,8 @@ class PeopleListVC: UIViewController {
         
         configureTableView()
         
+        configureDataSource()
+        
         setupBinding()
         
         viewModel.getPeople()
@@ -63,39 +66,38 @@ class PeopleListVC: UIViewController {
     private func configureTableView(){
         
         contentView.tableView.register(PersonCell.self, forCellReuseIdentifier: PersonCell.reuseID)
-        
-        
-        contentView.tableView.delegate = self
-        contentView.tableView.dataSource = self
+                
     }
+    
+    private func configureDataSource() {
+        dataSource = UITableViewDiffableDataSource(tableView: contentView.tableView, cellProvider: { tableView, indexPath, value in
+            let cell = tableView.dequeueReusableCell(withIdentifier: PersonCell.reuseID, for: indexPath) as! PersonCell
+            
+            /// Set the character data for the cell
+            cell.set(name: value, org: "Test1")
+            
+            return cell
+        })
+    }
+    
     
     private func handlePeopleListData(listData: [String]){
-        contentView.tableView.reloadData()
+       updateData(on: listData)
     }
     
-    
-
-
-}
-
-extension PeopleListVC : UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.peopleList.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    private func updateData(on list: [String]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, String>()
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: PersonCell.reuseID) as? PersonCell{
-
-            cell.set(name: viewModel.peopleList[indexPath.row], org: "Test1")
-            return cell
-        }else{
-            
-            return UITableViewCell()
+        /// Append the main section and its items to the snapshot
+        snapshot.appendSections([.main])
+        snapshot.appendItems(list)
+        
+        /// Apply the snapshot to the data source on the main queue
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.dataSource.apply(snapshot, animatingDifferences: true)
         }
-        
     }
-    
-    
+
+
 }
