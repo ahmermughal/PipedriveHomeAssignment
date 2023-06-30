@@ -18,6 +18,13 @@
 		AEF205942A4EE29300CA99D1 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF205932A4EE29300CA99D1 /* PersonCell.swift */; };
 		AEF205962A4EE45600CA99D1 /* ViewSizeConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF205952A4EE45600CA99D1 /* ViewSizeConstant.swift */; };
 		AEF205992A4EF09500CA99D1 /* PersonsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF205982A4EF09500CA99D1 /* PersonsResponse.swift */; };
+		AEF2059C2A4EF56B00CA99D1 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF2059B2A4EF56B00CA99D1 /* NetworkRouter.swift */; };
+		AEF2059E2A4EF68E00CA99D1 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF2059D2A4EF68E00CA99D1 /* NetworkError.swift */; };
+		AEF205A52A4EF6CA00CA99D1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF205A02A4EF6CA00CA99D1 /* NetworkManager.swift */; };
+		AEF205A62A4EF6CA00CA99D1 /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF205A12A4EF6CA00CA99D1 /* NetworkManagerProtocol.swift */; };
+		AEF205A72A4EF6CA00CA99D1 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF205A32A4EF6CA00CA99D1 /* NetworkServiceProtocol.swift */; };
+		AEF205A82A4EF6CA00CA99D1 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF205A42A4EF6CA00CA99D1 /* NetworkService.swift */; };
+		AEF205AA2A4EF94B00CA99D1 /* NetworkConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF205A92A4EF94B00CA99D1 /* NetworkConstant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +41,13 @@
 		AEF205932A4EE29300CA99D1 /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		AEF205952A4EE45600CA99D1 /* ViewSizeConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSizeConstant.swift; sourceTree = "<group>"; };
 		AEF205982A4EF09500CA99D1 /* PersonsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsResponse.swift; sourceTree = "<group>"; };
+		AEF2059B2A4EF56B00CA99D1 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		AEF2059D2A4EF68E00CA99D1 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		AEF205A02A4EF6CA00CA99D1 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		AEF205A12A4EF6CA00CA99D1 /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
+		AEF205A32A4EF6CA00CA99D1 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		AEF205A42A4EF6CA00CA99D1 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		AEF205A92A4EF94B00CA99D1 /* NetworkConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +102,7 @@
 		AEF205812A4ED88400CA99D1 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				AEF2059A2A4EF54D00CA99D1 /* Managers */,
 				AEF205822A4ED88F00CA99D1 /* Modules */,
 			);
 			path = Source;
@@ -170,6 +185,44 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		AEF2059A2A4EF54D00CA99D1 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				AEF205AB2A4EF9EE00CA99D1 /* Networking */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		AEF2059F2A4EF6CA00CA99D1 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				AEF205A02A4EF6CA00CA99D1 /* NetworkManager.swift */,
+				AEF205A12A4EF6CA00CA99D1 /* NetworkManagerProtocol.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		AEF205A22A4EF6CA00CA99D1 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				AEF205A32A4EF6CA00CA99D1 /* NetworkServiceProtocol.swift */,
+				AEF205A42A4EF6CA00CA99D1 /* NetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		AEF205AB2A4EF9EE00CA99D1 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				AEF2059F2A4EF6CA00CA99D1 /* NetworkManager */,
+				AEF205A22A4EF6CA00CA99D1 /* NetworkService */,
+				AEF2059B2A4EF56B00CA99D1 /* NetworkRouter.swift */,
+				AEF2059D2A4EF68E00CA99D1 /* NetworkError.swift */,
+				AEF205A92A4EF94B00CA99D1 /* NetworkConstant.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -240,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEF205A52A4EF6CA00CA99D1 /* NetworkManager.swift in Sources */,
 				AEF2056D2A4ED80700CA99D1 /* AppDelegate.swift in Sources */,
 				AEF2058F2A4EDDB400CA99D1 /* PeopleListViewModel.swift in Sources */,
 				AEF205892A4EDAF200CA99D1 /* PeopleListContentView.swift in Sources */,
@@ -247,7 +301,13 @@
 				AEF205992A4EF09500CA99D1 /* PersonsResponse.swift in Sources */,
 				AEF2056F2A4ED80700CA99D1 /* SceneDelegate.swift in Sources */,
 				AEF205962A4EE45600CA99D1 /* ViewSizeConstant.swift in Sources */,
+				AEF205AA2A4EF94B00CA99D1 /* NetworkConstant.swift in Sources */,
+				AEF2059C2A4EF56B00CA99D1 /* NetworkRouter.swift in Sources */,
 				AEF2058C2A4EDC5800CA99D1 /* StringConstant.swift in Sources */,
+				AEF205A82A4EF6CA00CA99D1 /* NetworkService.swift in Sources */,
+				AEF205A72A4EF6CA00CA99D1 /* NetworkServiceProtocol.swift in Sources */,
+				AEF2059E2A4EF68E00CA99D1 /* NetworkError.swift in Sources */,
+				AEF205A62A4EF6CA00CA99D1 /* NetworkManagerProtocol.swift in Sources */,
 				AEF205942A4EE29300CA99D1 /* PersonCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

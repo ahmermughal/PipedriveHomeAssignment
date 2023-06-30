@@ -8,11 +8,11 @@
 import Foundation
 
 
-struct PersonsResponse{
+struct PersonsResponse : Codable{
     
     let success : Bool
     let data : [Person]
-    let additionalData: AdditionalData?
+    let additionalData : AdditionalData?
     
     enum CodingKeys: String, CodingKey{
         case success
@@ -74,11 +74,11 @@ struct PictureItem : Codable {
     
 }
 
-struct AdditionalData {
+struct AdditionalData : Codable {
     let pagination : PaginationData
 }
 
-struct PaginationData {
+struct PaginationData : Codable {
     let start : Int
     let limit : Int
     let anyMoreItem : Bool

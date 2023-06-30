@@ -45,6 +45,15 @@ class PeopleListVC: UIViewController {
         
         viewModel.getPeople()
         
+        NetworkManager.shared.getAllPersons()
+            .sink { result in
+                print("Result: \(result)")
+            } receiveValue: { response in
+                print("Response: \(response)")
+            }
+            .store(in: &subscriptions)
+
+        
     }
     
     
