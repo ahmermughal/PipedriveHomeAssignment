@@ -17,6 +17,7 @@
 		AEF2058F2A4EDDB400CA99D1 /* PeopleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF2058E2A4EDDB400CA99D1 /* PeopleListViewModel.swift */; };
 		AEF205942A4EE29300CA99D1 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF205932A4EE29300CA99D1 /* PersonCell.swift */; };
 		AEF205962A4EE45600CA99D1 /* ViewSizeConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF205952A4EE45600CA99D1 /* ViewSizeConstant.swift */; };
+		AEF205992A4EF09500CA99D1 /* PersonsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF205982A4EF09500CA99D1 /* PersonsResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		AEF2058E2A4EDDB400CA99D1 /* PeopleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewModel.swift; sourceTree = "<group>"; };
 		AEF205932A4EE29300CA99D1 /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		AEF205952A4EE45600CA99D1 /* ViewSizeConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSizeConstant.swift; sourceTree = "<group>"; };
+		AEF205982A4EF09500CA99D1 /* PersonsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		AEF205832A4ED89500CA99D1 /* PeopleList */ = {
 			isa = PBXGroup;
 			children = (
+				AEF205972A4EF07B00CA99D1 /* Model */,
 				AEF2058D2A4EDD9E00CA99D1 /* ViewModel */,
 				AEF205872A4EDAD000CA99D1 /* View */,
 				AEF205842A4ED95200CA99D1 /* VC */,
@@ -157,6 +160,14 @@
 				AEF205932A4EE29300CA99D1 /* PersonCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		AEF205972A4EF07B00CA99D1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AEF205982A4EF09500CA99D1 /* PersonsResponse.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +244,7 @@
 				AEF2058F2A4EDDB400CA99D1 /* PeopleListViewModel.swift in Sources */,
 				AEF205892A4EDAF200CA99D1 /* PeopleListContentView.swift in Sources */,
 				AEF205862A4ED96600CA99D1 /* PeopleListVC.swift in Sources */,
+				AEF205992A4EF09500CA99D1 /* PersonsResponse.swift in Sources */,
 				AEF2056F2A4ED80700CA99D1 /* SceneDelegate.swift in Sources */,
 				AEF205962A4EE45600CA99D1 /* ViewSizeConstant.swift in Sources */,
 				AEF2058C2A4EDC5800CA99D1 /* StringConstant.swift in Sources */,

@@ -18,7 +18,6 @@ class PeopleListVC: UIViewController {
     
     private let viewModel : PeopleListViewModel
     
-    
     init(viewModel : PeopleListViewModel = PeopleListViewModel()) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
