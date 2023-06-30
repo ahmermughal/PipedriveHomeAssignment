@@ -27,6 +27,7 @@
 		AEF205AA2A4EF94B00CA99D1 /* NetworkConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF205A92A4EF94B00CA99D1 /* NetworkConstant.swift */; };
 		AEF9764C2A4F049300C91E99 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF9764B2A4F049300C91E99 /* UIImageView+Ext.swift */; };
 		AEF9764E2A4F064C00C91E99 /* ImageConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF9764D2A4F064C00C91E99 /* ImageConstant.swift */; };
+		AEF976512A4F07F400C91E99 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF976502A4F07F400C91E99 /* CacheManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		AEF205A92A4EF94B00CA99D1 /* NetworkConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstant.swift; sourceTree = "<group>"; };
 		AEF9764B2A4F049300C91E99 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 		AEF9764D2A4F064C00C91E99 /* ImageConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConstant.swift; sourceTree = "<group>"; };
+		AEF976502A4F07F400C91E99 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 		AEF2059A2A4EF54D00CA99D1 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				AEF9764F2A4F07E900C91E99 /* Cache */,
 				AEF205AB2A4EF9EE00CA99D1 /* Networking */,
 			);
 			path = Managers;
@@ -243,6 +246,14 @@
 				AEF9764B2A4F049300C91E99 /* UIImageView+Ext.swift */,
 			);
 			path = "UIImageView+Ext";
+			sourceTree = "<group>";
+		};
+		AEF9764F2A4F07E900C91E99 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				AEF976502A4F07F400C91E99 /* CacheManager.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +339,7 @@
 				AEF2059C2A4EF56B00CA99D1 /* NetworkRouter.swift in Sources */,
 				AEF2058C2A4EDC5800CA99D1 /* StringConstant.swift in Sources */,
 				AEF205A82A4EF6CA00CA99D1 /* NetworkService.swift in Sources */,
+				AEF976512A4F07F400C91E99 /* CacheManager.swift in Sources */,
 				AEF9764E2A4F064C00C91E99 /* ImageConstant.swift in Sources */,
 				AEF205A72A4EF6CA00CA99D1 /* NetworkServiceProtocol.swift in Sources */,
 				AEF2059E2A4EF68E00CA99D1 /* NetworkError.swift in Sources */,

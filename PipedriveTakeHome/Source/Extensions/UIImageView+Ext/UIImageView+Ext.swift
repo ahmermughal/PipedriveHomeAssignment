@@ -11,6 +11,13 @@ extension UIImageView {
     
     @discardableResult func setImageWithUrl(url: String) -> UIImageView? {
         
+        let cacheKey = NSString(string: url)
+        
+        if let image = CacheManager.shared.imageCache.object(forKey: cacheKey) {
+            self.image = image
+            return self
+        }
+        
         guard let url = URL(string: url) else {
             self.image = ImageConstant.profilePlaceholder
             return self
@@ -24,9 +31,13 @@ extension UIImageView {
             }
             
             if let data = data, let loadedImage = UIImage(data: data)  {
+                
+                CacheManager.shared.imageCache.setObject(loadedImage, forKey: cacheKey)
+
                 DispatchQueue.main.async {
                     self.image = loadedImage
                 }
+                
             }else {
                 self.image = ImageConstant.profilePlaceholder
             }
