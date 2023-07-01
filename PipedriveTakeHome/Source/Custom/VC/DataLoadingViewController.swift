@@ -32,9 +32,12 @@ class DataLoadingViewController: UIViewController {
       }
       
       func dismissLoadingView(){
-          DispatchQueue.main.async {
-            self.containerView.removeFromSuperview()
-            self.containerView = nil
+          DispatchQueue.main.async { [weak self] in
+              guard let self = self else {return}
+              if self.containerView != nil{
+                  self.containerView.removeFromSuperview()
+                  self.containerView = nil
+              }
           }
       }
 

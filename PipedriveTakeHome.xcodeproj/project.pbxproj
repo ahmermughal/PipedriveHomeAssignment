@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AE1186AA2A508DCD0041C752 /* PersistanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1186A92A508DCD0041C752 /* PersistanceService.swift */; };
+		AE1186AA2A508DCD0041C752 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1186A92A508DCD0041C752 /* PersistenceService.swift */; };
+		AE1186AD2A50930A0041C752 /* PeopleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1186AC2A50930A0041C752 /* PeopleRepository.swift */; };
+		AE1186AF2A50936C0041C752 /* PersistenceServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1186AE2A50936C0041C752 /* PersistenceServiceProtocol.swift */; };
+		AE1186B12A5093FD0041C752 /* PeopleRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1186B02A5093FD0041C752 /* PeopleRepositoryProtocol.swift */; };
 		AE145EE02A5015E60034002C /* PersonDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE145EDF2A5015E60034002C /* PersonDetailVC.swift */; };
 		AE145EE32A5016290034002C /* PersonDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE145EE22A5016290034002C /* PersonDetailViewModel.swift */; };
 		AE145EE62A5017370034002C /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE145EE52A5017370034002C /* ScreenSize.swift */; };
@@ -38,7 +41,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AE1186A92A508DCD0041C752 /* PersistanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceService.swift; sourceTree = "<group>"; };
+		AE1186A92A508DCD0041C752 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		AE1186AC2A50930A0041C752 /* PeopleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleRepository.swift; sourceTree = "<group>"; };
+		AE1186AE2A50936C0041C752 /* PersistenceServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceServiceProtocol.swift; sourceTree = "<group>"; };
+		AE1186B02A5093FD0041C752 /* PeopleRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleRepositoryProtocol.swift; sourceTree = "<group>"; };
 		AE145EDF2A5015E60034002C /* PersonDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailVC.swift; sourceTree = "<group>"; };
 		AE145EE22A5016290034002C /* PersonDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewModel.swift; sourceTree = "<group>"; };
 		AE145EE52A5017370034002C /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
@@ -81,12 +87,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AE1186A82A508DC00041C752 /* Persistance */ = {
+		AE1186A82A508DC00041C752 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				AE1186A92A508DCD0041C752 /* PersistanceService.swift */,
+				AE1186A92A508DCD0041C752 /* PersistenceService.swift */,
+				AE1186AE2A50936C0041C752 /* PersistenceServiceProtocol.swift */,
 			);
-			path = Persistance;
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		AE1186AB2A5092660041C752 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				AE1186AC2A50930A0041C752 /* PeopleRepository.swift */,
+				AE1186B02A5093FD0041C752 /* PeopleRepositoryProtocol.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		AE145EE12A5016110034002C /* ViewModel */ = {
@@ -296,7 +312,8 @@
 		AEF2059A2A4EF54D00CA99D1 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				AE1186A82A508DC00041C752 /* Persistance */,
+				AE1186AB2A5092660041C752 /* Repository */,
+				AE1186A82A508DC00041C752 /* Persistence */,
 				AEF9764F2A4F07E900C91E99 /* Cache */,
 				AEF205AB2A4EF9EE00CA99D1 /* Networking */,
 			);
@@ -432,8 +449,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEF205A52A4EF6CA00CA99D1 /* NetworkManager.swift in Sources */,
+				AE1186B12A5093FD0041C752 /* PeopleRepositoryProtocol.swift in Sources */,
 				AEF2056D2A4ED80700CA99D1 /* AppDelegate.swift in Sources */,
-				AE1186AA2A508DCD0041C752 /* PersistanceService.swift in Sources */,
+				AE1186AA2A508DCD0041C752 /* PersistenceService.swift in Sources */,
 				AEF2058F2A4EDDB400CA99D1 /* PeopleListViewModel.swift in Sources */,
 				AEF205892A4EDAF200CA99D1 /* PeopleListContentView.swift in Sources */,
 				AEF205862A4ED96600CA99D1 /* PeopleListVC.swift in Sources */,
@@ -456,6 +474,8 @@
 				AEF2059E2A4EF68E00CA99D1 /* NetworkError.swift in Sources */,
 				AE145EE62A5017370034002C /* ScreenSize.swift in Sources */,
 				AEF205A62A4EF6CA00CA99D1 /* NetworkManagerProtocol.swift in Sources */,
+				AE1186AD2A50930A0041C752 /* PeopleRepository.swift in Sources */,
+				AE1186AF2A50936C0041C752 /* PersistenceServiceProtocol.swift in Sources */,
 				AEF205942A4EE29300CA99D1 /* PersonCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
