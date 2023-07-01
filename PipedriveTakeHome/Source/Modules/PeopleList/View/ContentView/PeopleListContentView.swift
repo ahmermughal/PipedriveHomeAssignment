@@ -29,6 +29,16 @@ class PeopleListContentView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setupNoInternetView(){
+        imageView.image = ImageConstant.peopleListNoInternet
+        imageView.isHidden = false
+    }
+    
+    func setupEmptyListView(){
+        imageView.image = ImageConstant.peopleListNoInternet
+        imageView.isHidden = false
+    }
+    
     private func setupImageViews(){
         
         imageView.contentMode = .scaleAspectFit
@@ -42,6 +52,7 @@ class PeopleListContentView: UIView {
         refreshControl.attributedTitle = NSAttributedString(string: StringConstant.pullToRefresh)
 
     }
+    
     
     private func layoutUI() {
         let views = [imageView, tableView]

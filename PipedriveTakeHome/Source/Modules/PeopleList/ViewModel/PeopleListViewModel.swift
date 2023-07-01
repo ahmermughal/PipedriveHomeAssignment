@@ -12,12 +12,19 @@ enum Section{
     case main
 }
 
+enum PeopleListState{
+    case empty
+    case noInternet
+    case allGood
+}
+
 class PeopleListViewModel{
     
     @Published private(set) var peopleList: [Person] = []
     @Published private(set) var showLoader : Bool?
-    @Published private(set) var listIsEmpty : Bool?
-    
+    @Published private(set) var state : PeopleListState?
+    @Published private(set) var internetOffline : Bool?
+
     @Published private(set) var hasNext = false
     
     @Published private(set) var isLoadingNext = false
@@ -43,9 +50,6 @@ class PeopleListViewModel{
     
     private func setupRepoBinding(){
         
-        repository.$listIsEmpty
-            .assign(to: &$listIsEmpty)
-        
         repository.$peopleList
             .assign(to: &$peopleList)
         
@@ -57,6 +61,26 @@ class PeopleListViewModel{
         
         repository.$isLoadingNext
             .assign(to: &$isLoadingNext)
+        
+        repository.$peopleListData
+            .compactMap{$0}
+            .sink(receiveValue: handlePeopleListData)
+            .store(in: &subscriptions)
+        
+    }
+    
+    private func handlePeopleListData(_ list: [Person], _ type: PeopleRepository.RepoDataType){
+        
+        if list.isEmpty && type == .Network{
+            state = .empty
+            return
+        } else if list.isEmpty && type == .Storage {
+            state = .noInternet
+            return
+        }else {
+            state = .allGood
+            peopleList = list
+        }
         
     }
     

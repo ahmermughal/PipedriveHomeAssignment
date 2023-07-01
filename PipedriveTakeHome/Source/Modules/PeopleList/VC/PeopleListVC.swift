@@ -69,12 +69,14 @@ class PeopleListVC: DataLoadingViewController {
             .compactMap{$0}
             .sink(receiveValue: handleShowLoader)
             .store(in: &subscriptions)
+
         
-        viewModel.$listIsEmpty
+        viewModel.$state
             .subscribe(on: DispatchQueue.main)
             .compactMap{$0}
-            .sink(receiveValue: handleListIsEmpty)
+            .sink(receiveValue: handleState)
             .store(in: &subscriptions)
+
         
     }
     
@@ -110,6 +112,20 @@ class PeopleListVC: DataLoadingViewController {
     
     private func handleListIsEmpty(empty: Bool){
         contentView.imageView.isHidden = !empty
+    }
+    
+    private func handleState(state: PeopleListState){
+        
+        switch state {
+        case .empty:
+            contentView.setupEmptyListView()
+        case .noInternet:
+            contentView.setupNoInternetView()
+        case .allGood:
+            contentView.imageView.isHidden = true
+        }
+        
+        
     }
     
     private func handleShowLoader(show: Bool){
