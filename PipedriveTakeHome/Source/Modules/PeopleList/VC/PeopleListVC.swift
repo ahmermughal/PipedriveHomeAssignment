@@ -76,6 +76,7 @@ class PeopleListVC: DataLoadingViewController {
                 
         contentView.tableView.separatorStyle = .none
         
+        contentView.tableView.delegate = self
     }
     
     private func configureDataSource() {
@@ -114,6 +115,20 @@ class PeopleListVC: DataLoadingViewController {
             self.dataSource.apply(snapshot, animatingDifferences: true)
         }
     }
+    
+    private func pushToPersonDetailVC(person: Person){
+        let vm = PersonDetailViewModel(person: person)
+        let vc = PersonDetailVC(viewModel: vm)
+        navigationController?.pushViewController(vc, animated: true)
+    }
 
+}
 
+extension PeopleListVC : UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let person = viewModel.peopleList[indexPath.row]
+        pushToPersonDetailVC(person: person)
+    }
+    
 }

@@ -63,7 +63,6 @@ class PersonCell: UITableViewCell {
     private func setupImageViews() {
         /// Set the corner radius and background color of the profile image view
         profileImageView.layer.cornerRadius = ViewSizeConstant.personCellProfileImageSize.height / 2
-        profileImageView.backgroundColor = .red
         profileImageView.clipsToBounds = true
     }
     
