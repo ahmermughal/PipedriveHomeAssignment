@@ -34,6 +34,7 @@ class PersonDetailVC: UIViewController {
         super.viewDidLoad()
 
         configureUI()
+        print(viewModel.contactList)
     }
     
     
@@ -48,7 +49,7 @@ class PersonDetailVC: UIViewController {
         contentView.tableView.register(ContactCell.self, forCellReuseIdentifier: ContactCell.reuseID)
         contentView.tableView.dataSource = self
         contentView.tableView.delegate = self
-        
+        contentView.tableView.separatorStyle = .none
     }
     
 }

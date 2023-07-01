@@ -11,7 +11,7 @@ import Foundation
 enum NetworkRouter {
     
     
-    case getAllPersons
+    case getAllPersons(page: Int)
 
     
     static let baseURL: String = "https://api.pipedrive.com/v1/"
@@ -51,8 +51,10 @@ enum NetworkRouter {
     
     var parameters: [String: Any]? {
         switch self {
-        case .getAllPersons:
-            return ["api_token" : NetworkConstant.apiToken]
+        case .getAllPersons(let page):
+            return ["api_token" : NetworkConstant.apiToken,
+                    "limit" : "\(NetworkConstant.personLimit)",
+                    "start" : "\(((NetworkConstant.personLimit * page) - NetworkConstant.personLimit))" ]
         }
     }
     

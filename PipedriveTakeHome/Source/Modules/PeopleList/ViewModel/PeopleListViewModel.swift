@@ -17,27 +17,39 @@ class PeopleListViewModel{
     @Published private(set) var peopleList: [Person] = []
     @Published private(set) var showLoader : Bool?
 
+    private(set) var hasNext = false
     
+    private(set) var isLoadingNext = false
+    
+    private var currentPage: Int = 1
+
     private var subscriptions: [AnyCancellable] = []
     
     func getPeople(){
+        isLoadingNext = true
         showLoader = true
 
-        NetworkManager.shared.getAllPersons()
+        NetworkManager.shared.getAllPersons(page: currentPage)
             .sink(receiveCompletion: handleCompletion, receiveValue: handlePeopleResponse)
             .store(in: &subscriptions)
         
     }
     
     private func handlePeopleResponse(response: PersonsResponse){
-        
         peopleList.append(contentsOf: response.data)
+        
+        if let anyMoreItems = response.additionalData?.pagination.anyMoreItem, anyMoreItems {
+            currentPage += 1
+            hasNext = true
+        } else {
+            hasNext = false
+        }
         
     }
     
     private func handleCompletion(completion: Subscribers.Completion<NetworkError>){
         showLoader = false
-        print(completion)
+        isLoadingNext = false
     }
     
 }

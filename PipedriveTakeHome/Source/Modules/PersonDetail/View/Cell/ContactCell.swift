@@ -17,6 +17,8 @@ class ContactCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        configure()
+        
         setupLabels()
         
         layoutUI()
@@ -29,6 +31,10 @@ class ContactCell: UITableViewCell {
     func set(contact: PersonContact){
         typeLabel.text = contact.label
         contactLabel.text = contact.value
+    }
+    
+    private func configure(){
+        selectionStyle = .none
     }
     
     private func setupLabels(){

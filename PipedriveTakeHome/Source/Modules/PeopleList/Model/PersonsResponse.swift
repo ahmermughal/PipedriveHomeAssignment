@@ -39,6 +39,27 @@ struct Person : Codable, Hashable {
         case picture = "picture_id"
     }
     
+    func getPhoneNumbers()->[PersonContact]{
+        var phoneList : [PersonContact] = []
+        
+        for item in self.phone{
+            if !(item.value?.isEmpty ?? false){
+                phoneList.append(item)
+            }
+        }
+        return phoneList
+    }
+    
+    func getEmails()->[PersonContact]{
+        var emailList : [PersonContact] = []
+        
+        for item in self.email{
+            if !(item.value?.isEmpty ?? false){
+                emailList.append(item)
+            }
+        }
+        return emailList
+    }
 }
 
 struct PersonContact : Codable, Hashable {

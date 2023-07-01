@@ -19,7 +19,7 @@ class NetworkManager : NetworkManagerProtocol{
 
     func getAllPersons(page: Int = 1) -> AnyPublisher<PersonsResponse, NetworkError>{
 
-        return networkService.performRequest(apiType: .getAllPersons, resultType: PersonsResponse.self)
+        return networkService.performRequest(apiType: .getAllPersons(page: page), resultType: PersonsResponse.self)
     }
 
     
