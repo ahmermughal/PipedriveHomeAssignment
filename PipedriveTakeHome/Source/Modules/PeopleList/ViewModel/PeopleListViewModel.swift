@@ -52,7 +52,10 @@ class PeopleListViewModel{
         }
         
         listIsEmpty = false
+        
         peopleList.append(contentsOf: response.data)
+        
+        PersistanceService.shared.savePeopleList(list: peopleList)
         
         if let anyMoreItems = response.additionalData?.pagination.anyMoreItem, anyMoreItems {
             currentPage += 1

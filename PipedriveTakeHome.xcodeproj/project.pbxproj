@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE1186AA2A508DCD0041C752 /* PersistanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1186A92A508DCD0041C752 /* PersistanceService.swift */; };
 		AE145EE02A5015E60034002C /* PersonDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE145EDF2A5015E60034002C /* PersonDetailVC.swift */; };
 		AE145EE32A5016290034002C /* PersonDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE145EE22A5016290034002C /* PersonDetailViewModel.swift */; };
 		AE145EE62A5017370034002C /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE145EE52A5017370034002C /* ScreenSize.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE1186A92A508DCD0041C752 /* PersistanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceService.swift; sourceTree = "<group>"; };
 		AE145EDF2A5015E60034002C /* PersonDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailVC.swift; sourceTree = "<group>"; };
 		AE145EE22A5016290034002C /* PersonDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewModel.swift; sourceTree = "<group>"; };
 		AE145EE52A5017370034002C /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
@@ -79,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE1186A82A508DC00041C752 /* Persistance */ = {
+			isa = PBXGroup;
+			children = (
+				AE1186A92A508DCD0041C752 /* PersistanceService.swift */,
+			);
+			path = Persistance;
+			sourceTree = "<group>";
+		};
 		AE145EE12A5016110034002C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +296,7 @@
 		AEF2059A2A4EF54D00CA99D1 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				AE1186A82A508DC00041C752 /* Persistance */,
 				AEF9764F2A4F07E900C91E99 /* Cache */,
 				AEF205AB2A4EF9EE00CA99D1 /* Networking */,
 			);
@@ -362,6 +373,8 @@
 			dependencies = (
 			);
 			name = PipedriveTakeHome;
+			packageProductDependencies = (
+			);
 			productName = PipedriveTakeHome;
 			productReference = AEF205692A4ED80700CA99D1 /* PipedriveTakeHome.app */;
 			productType = "com.apple.product-type.application";
@@ -390,6 +403,8 @@
 				Base,
 			);
 			mainGroup = AEF205602A4ED80700CA99D1;
+			packageReferences = (
+			);
 			productRefGroup = AEF2056A2A4ED80700CA99D1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -418,6 +433,7 @@
 			files = (
 				AEF205A52A4EF6CA00CA99D1 /* NetworkManager.swift in Sources */,
 				AEF2056D2A4ED80700CA99D1 /* AppDelegate.swift in Sources */,
+				AE1186AA2A508DCD0041C752 /* PersistanceService.swift in Sources */,
 				AEF2058F2A4EDDB400CA99D1 /* PeopleListViewModel.swift in Sources */,
 				AEF205892A4EDAF200CA99D1 /* PeopleListContentView.swift in Sources */,
 				AEF205862A4ED96600CA99D1 /* PeopleListVC.swift in Sources */,

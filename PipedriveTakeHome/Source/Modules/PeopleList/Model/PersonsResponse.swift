@@ -80,7 +80,6 @@ struct PersonPicture : Codable, Hashable {
     
     let pictures : PictureItem?
     
-    
 }
 
 struct PictureItem : Codable, Hashable {
