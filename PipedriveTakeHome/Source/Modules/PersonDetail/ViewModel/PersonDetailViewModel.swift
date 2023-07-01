@@ -8,28 +8,30 @@
 import Foundation
 
 
-struct PersonDetailViewModel{
+class PersonDetailViewModel {
     
     let person : Person
+    var contactList : [(title: String, contact: [PersonContact])]  = []
     
+    init(person: Person) {
+        self.person = person
+        setupContactList()
+    }
     
-    
-    var contactList : [(title: String, contact: [PersonContact])] {
+    func setupContactList() {
         
-        var contactDataArr : [(title: String, contact: [PersonContact])] = []
         
         let phoneNumbers = person.getPhoneNumbers()
         let emails = person.getEmails()
         
         if !phoneNumbers.isEmpty {
-            contactDataArr.append((title: StringConstant.phone, contact: person.phone))
+            contactList.append((title: StringConstant.phone, contact: person.phone))
         }
         
         if !emails.isEmpty {
-            contactDataArr.append((title: StringConstant.email, contact: person.email))
+            contactList.append((title: StringConstant.email, contact: person.email))
         }
         
-        return contactDataArr
     }
     
 }

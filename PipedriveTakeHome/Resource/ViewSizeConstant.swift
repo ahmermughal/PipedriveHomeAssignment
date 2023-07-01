@@ -15,4 +15,8 @@ struct ViewSizeConstant{
     
     // MARK: PersonDetailContentView
     static let personDetailContentViewProfileImageSize : CGSize = CGSize(width: 120, height: 120)
+    
+    // MARK: PersonListContentView
+    static let personListContentViewEmptyImageViewSize : CGSize = CGSize(width: 220, height: 220)
+
 }

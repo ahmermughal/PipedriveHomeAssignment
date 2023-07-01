@@ -13,5 +13,5 @@ struct StringConstant{
     static let people : String = "People"
     static let phone : String = "Phone"
     static let email : String = "Email"
-
+    static let pullToRefresh : String = "Pull to refresh"
 }

@@ -43,6 +43,8 @@ class PeopleListVC: DataLoadingViewController {
         
         setupBinding()
         
+        setupListeners()
+        
         viewModel.getPeople()
         
     }
@@ -67,6 +69,18 @@ class PeopleListVC: DataLoadingViewController {
             .compactMap{$0}
             .sink(receiveValue: handleShowLoader)
             .store(in: &subscriptions)
+        
+        viewModel.$listIsEmpty
+            .subscribe(on: DispatchQueue.main)
+            .compactMap{$0}
+            .sink(receiveValue: handleListIsEmpty)
+            .store(in: &subscriptions)
+        
+    }
+    
+    private func setupListeners(){
+        
+        contentView.refreshControl.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
         
     }
     
@@ -94,10 +108,15 @@ class PeopleListVC: DataLoadingViewController {
        updateData(on: listData)
     }
     
+    private func handleListIsEmpty(empty: Bool){
+        contentView.imageView.isHidden = !empty
+    }
+    
     private func handleShowLoader(show: Bool){
         if show{
             showLoadingView()
         }else{
+            contentView.refreshControl.endRefreshing()
             dismissLoadingView()
         }
     }
@@ -122,6 +141,11 @@ class PeopleListVC: DataLoadingViewController {
         let vc = PersonDetailVC(viewModel: vm)
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @objc private func refreshTableView(){
+        viewModel.resetData()
+        viewModel.getPeople()
+    }
 
 }
 
@@ -143,7 +167,6 @@ extension PeopleListVC : UITableViewDelegate {
                 return
             }
             
-            /// Request the next set of characters from the view model
             viewModel.getPeople()
         }
     }

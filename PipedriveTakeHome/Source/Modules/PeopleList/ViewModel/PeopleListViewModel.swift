@@ -16,14 +16,23 @@ class PeopleListViewModel{
     
     @Published private(set) var peopleList: [Person] = []
     @Published private(set) var showLoader : Bool?
-
+    @Published private(set) var listIsEmpty : Bool?
+    
     private(set) var hasNext = false
     
     private(set) var isLoadingNext = false
     
+    
     private var currentPage: Int = 1
 
     private var subscriptions: [AnyCancellable] = []
+    
+    
+    func resetData(){
+        peopleList = []
+        hasNext = false
+        currentPage = 1
+    }
     
     func getPeople(){
         isLoadingNext = true
@@ -36,6 +45,13 @@ class PeopleListViewModel{
     }
     
     private func handlePeopleResponse(response: PersonsResponse){
+        
+        guard !response.data.isEmpty else {
+            listIsEmpty = true
+            return
+        }
+        
+        listIsEmpty = false
         peopleList.append(contentsOf: response.data)
         
         if let anyMoreItems = response.additionalData?.pagination.anyMoreItem, anyMoreItems {

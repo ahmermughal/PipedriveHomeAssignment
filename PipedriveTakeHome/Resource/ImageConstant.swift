@@ -11,4 +11,7 @@ struct ImageConstant{
     
     static let profilePlaceholder : UIImage = UIImage(named: "profile-placeholder")!
     
+    static let peopleListEmpty : UIImage = UIImage(named: "people-list-empty")!
+
+    
 }
