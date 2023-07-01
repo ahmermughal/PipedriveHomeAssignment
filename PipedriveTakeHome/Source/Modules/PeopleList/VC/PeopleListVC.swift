@@ -109,6 +109,7 @@ class PeopleListVC: DataLoadingViewController {
         snapshot.appendSections([.main])
         snapshot.appendItems(list)
         
+        
         /// Apply the snapshot to the data source on the main queue
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }

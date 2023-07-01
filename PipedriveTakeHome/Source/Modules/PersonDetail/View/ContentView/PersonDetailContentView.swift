@@ -12,6 +12,8 @@ class PersonDetailContentView: UIView {
     let profileImageView = UIImageView()
     let nameLabel = UILabel()
     let organizationLabel = UILabel()
+    let tableViewContainer = UIView()
+    let tableView = UITableView()
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -21,6 +23,8 @@ class PersonDetailContentView: UIView {
         setupLabels()
         
         setupImageViews()
+        
+        setupTableView()
         
         layoutUI()
     }
@@ -46,15 +50,31 @@ class PersonDetailContentView: UIView {
     
     private func setupImageViews(){
         profileImageView.layer.cornerRadius = ViewSizeConstant.personDetailContentViewProfileImageSize.height / 2
-        profileImageView.backgroundColor = .red
+        profileImageView.image = ImageConstant.profilePlaceholder
         profileImageView.clipsToBounds = true
-        
-        
     }
+    
+    private func setupTableView() {
+        tableViewContainer.backgroundColor = .secondarySystemBackground
+        
+        tableView.backgroundColor = .clear
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableViewContainer.addSubview(tableView)
+        
+        NSLayoutConstraint.activate([
+        
+            tableView.topAnchor.constraint(equalTo: tableViewContainer.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: tableViewContainer.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: tableViewContainer.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: tableViewContainer.bottomAnchor, constant: -16)
+            
+        ])
+    }
+    
     
     private func layoutUI(){
         
-        let views = [profileImageView, nameLabel, organizationLabel]
+        let views = [profileImageView, nameLabel, organizationLabel, tableViewContainer]
         
         
         for view in views {
@@ -76,6 +96,12 @@ class PersonDetailContentView: UIView {
             organizationLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
             organizationLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             organizationLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+            
+            tableViewContainer.topAnchor.constraint(equalTo: organizationLabel.bottomAnchor, constant: 16),
+            tableViewContainer.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            tableViewContainer.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            tableViewContainer.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            
 
 
             

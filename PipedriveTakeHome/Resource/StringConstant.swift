@@ -11,6 +11,7 @@ import Foundation
 struct StringConstant{
     
     static let people : String = "People"
-    
-    
+    static let phone : String = "Phone"
+    static let email : String = "Email"
+
 }

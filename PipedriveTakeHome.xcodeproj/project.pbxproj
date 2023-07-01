@@ -10,6 +10,7 @@
 		AE145EE02A5015E60034002C /* PersonDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE145EDF2A5015E60034002C /* PersonDetailVC.swift */; };
 		AE145EE32A5016290034002C /* PersonDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE145EE22A5016290034002C /* PersonDetailViewModel.swift */; };
 		AE145EE62A5017370034002C /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE145EE52A5017370034002C /* ScreenSize.swift */; };
+		AE145EEA2A502E4F0034002C /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE145EE92A502E4F0034002C /* ContactCell.swift */; };
 		AE1DC4B82A4F69C000835FB2 /* DataLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DC4B72A4F69C000835FB2 /* DataLoadingViewController.swift */; };
 		AE1DC4BD2A4F72B700835FB2 /* PersonDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1DC4BC2A4F72B700835FB2 /* PersonDetailContentView.swift */; };
 		AEF2056D2A4ED80700CA99D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF2056C2A4ED80700CA99D1 /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 		AE145EDF2A5015E60034002C /* PersonDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailVC.swift; sourceTree = "<group>"; };
 		AE145EE22A5016290034002C /* PersonDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewModel.swift; sourceTree = "<group>"; };
 		AE145EE52A5017370034002C /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
+		AE145EE92A502E4F0034002C /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		AE1DC4B72A4F69C000835FB2 /* DataLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoadingViewController.swift; sourceTree = "<group>"; };
 		AE1DC4BC2A4F72B700835FB2 /* PersonDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailContentView.swift; sourceTree = "<group>"; };
 		AEF205692A4ED80700CA99D1 /* PipedriveTakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PipedriveTakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +95,22 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		AE145EE72A502E1E0034002C /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				AE1DC4BC2A4F72B700835FB2 /* PersonDetailContentView.swift */,
+			);
+			path = ContentView;
+			sourceTree = "<group>";
+		};
+		AE145EE82A502E250034002C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AE145EE92A502E4F0034002C /* ContactCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		AE1DC4B52A4F69A300835FB2 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,7 +148,8 @@
 		AE1DC4BB2A4F729D00835FB2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AE1DC4BC2A4F72B700835FB2 /* PersonDetailContentView.swift */,
+				AE145EE82A502E250034002C /* Cell */,
+				AE145EE72A502E1E0034002C /* ContentView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -412,6 +431,7 @@
 				AEF205AA2A4EF94B00CA99D1 /* NetworkConstant.swift in Sources */,
 				AEF9764C2A4F049300C91E99 /* UIImageView+Ext.swift in Sources */,
 				AEF2059C2A4EF56B00CA99D1 /* NetworkRouter.swift in Sources */,
+				AE145EEA2A502E4F0034002C /* ContactCell.swift in Sources */,
 				AEF2058C2A4EDC5800CA99D1 /* StringConstant.swift in Sources */,
 				AEF205A82A4EF6CA00CA99D1 /* NetworkService.swift in Sources */,
 				AEF976512A4F07F400C91E99 /* CacheManager.swift in Sources */,
