@@ -14,6 +14,7 @@ class PersonDetailContentView: UIView {
     let organizationLabel = UILabel()
     let tableViewContainer = UIView()
     let tableView = UITableView()
+    let emptyImageView = UIImageView()
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -52,6 +53,10 @@ class PersonDetailContentView: UIView {
         profileImageView.layer.cornerRadius = ViewSizeConstant.personDetailContentViewProfileImageSize.height / 2
         profileImageView.image = ImageConstant.profilePlaceholder
         profileImageView.clipsToBounds = true
+        
+        emptyImageView.contentMode = .scaleAspectFit
+        emptyImageView.image = ImageConstant.peopleListEmpty
+        emptyImageView.isHidden = true
     }
     
     private func setupTableView() {
@@ -74,7 +79,7 @@ class PersonDetailContentView: UIView {
     
     private func layoutUI(){
         
-        let views = [profileImageView, nameLabel, organizationLabel, tableViewContainer]
+        let views = [profileImageView, nameLabel, organizationLabel, tableViewContainer, emptyImageView]
         
         
         for view in views {
@@ -100,12 +105,14 @@ class PersonDetailContentView: UIView {
             tableViewContainer.topAnchor.constraint(equalTo: organizationLabel.bottomAnchor, constant: 16),
             tableViewContainer.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             tableViewContainer.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            tableViewContainer.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            tableViewContainer.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             
-
-
             
-        
+            emptyImageView.centerYAnchor.constraint(equalTo: tableViewContainer.safeAreaLayoutGuide.centerYAnchor),
+            emptyImageView.centerXAnchor.constraint(equalTo: tableViewContainer.centerXAnchor),
+            emptyImageView.heightAnchor.constraint(equalToConstant: ViewSizeConstant.personListContentViewEmptyImageViewSize.height),
+            emptyImageView.widthAnchor.constraint(equalToConstant: ViewSizeConstant.personListContentViewEmptyImageViewSize.width),
+
         ])
         
     }

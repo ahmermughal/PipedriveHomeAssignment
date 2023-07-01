@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import Combine
 
 class PersonDetailVC: UIViewController {
 
     private let contentView = PersonDetailContentView(frame: CGRect(x: 0, y: 0, width: ScreenSize.width, height: ScreenSize.height))
+    
+    private var subscriptions: [AnyCancellable] = []
+
     
     private let viewModel : PersonDetailViewModel
     
@@ -17,9 +21,6 @@ class PersonDetailVC: UIViewController {
     init(viewModel: PersonDetailViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        
-        configureUI()
-        configureTableView()
     }
     
     required init?(coder: NSCoder) {
@@ -34,6 +35,11 @@ class PersonDetailVC: UIViewController {
         super.viewDidLoad()
 
         configureUI()
+        
+        configureTableView()
+        
+        setupBinding()
+        
         print(viewModel.contactList)
     }
     
@@ -45,6 +51,16 @@ class PersonDetailVC: UIViewController {
         contentView.profileImageView.setImageWithUrl(url: viewModel.person.picture?.pictures?.largeImage ?? "")
     }
     
+    private func setupBinding(){
+        
+        viewModel.$listIsEmpty
+            .subscribe(on: DispatchQueue.main)
+            .compactMap{$0}
+            .sink(receiveValue: handleListIsEmpty)
+            .store(in: &subscriptions)
+        
+    }
+    
     private func configureTableView(){
         contentView.tableView.register(ContactCell.self, forCellReuseIdentifier: ContactCell.reuseID)
         contentView.tableView.dataSource = self
@@ -52,6 +68,9 @@ class PersonDetailVC: UIViewController {
         contentView.tableView.separatorStyle = .none
     }
     
+    private func handleListIsEmpty(empty: Bool){
+        contentView.emptyImageView.isHidden = !empty
+    }
 }
 
 extension PersonDetailVC : UITableViewDataSource, UITableViewDelegate {
