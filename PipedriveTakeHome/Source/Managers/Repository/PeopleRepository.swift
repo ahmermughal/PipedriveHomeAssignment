@@ -58,7 +58,7 @@ class PeopleRepository {
         
         peopleListData = (peopleList, .Network)
         
-        PersistenceService.shared.savePeopleList(list: peopleList)
+        persistenceService.savePeopleList(list: peopleList)
         
         if let anyMoreItems = response.additionalData?.pagination.anyMoreItem, anyMoreItems {
             currentPage += 1
