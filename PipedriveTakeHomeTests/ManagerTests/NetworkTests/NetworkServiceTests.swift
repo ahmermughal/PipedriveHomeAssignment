@@ -57,7 +57,7 @@ final class NetworkServiceTests: XCTestCase {
             receiveValue: { item in
                 // THEN
                 /// when data is successfully parsed then item should contain a variable data having an array containing 8 `Person` item
-                XCTAssertEqual(item.data.count, 8)
+                XCTAssertEqual(item.data.count, 8, "data array count should be 8")
                 
                 /// expection is meet which will pass the XCTest
                 expectation.fulfill()
@@ -109,7 +109,7 @@ final class NetworkServiceTests: XCTestCase {
                 case .failure(let error):
                     // THEN
                     /// Invalid data was passed so the expected error should be `dataParseError`
-                    XCTAssertEqual(error, .dataParseError)
+                    XCTAssertEqual(error, .dataParseError, "Error thown should be .dataParseError")
                     /// expection is meet which will pass the XCTest
                     expectation.fulfill()
                 }
@@ -162,7 +162,7 @@ final class NetworkServiceTests: XCTestCase {
                 case .failure(let error):
                     // THEN
                     /// 404 response was passed so the expected error should be `badRequest`
-                    XCTAssertEqual(error, .badRequest)
+                    XCTAssertEqual(error, .badRequest, "Error thown should be .badRequest")
                     expectation.fulfill()
                 }
                 
@@ -212,7 +212,7 @@ final class NetworkServiceTests: XCTestCase {
                 case .failure(let error):
                     // THEN
                     /// notConnectedToInternet URLError was passed so the expected error should be NetworkError `noInternet`
-                    XCTAssertEqual(error, .noInternet)
+                    XCTAssertEqual(error, .noInternet, "Error thown should be .noInternet")
                     expectation.fulfill()
                 }
                 

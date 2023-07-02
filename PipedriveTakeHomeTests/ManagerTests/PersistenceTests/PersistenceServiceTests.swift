@@ -46,13 +46,13 @@ final class PersistenceServiceTests: XCTestCase {
         // THEN
         
         /// Assert that savedData is not nil
-        XCTAssertNotNil(savedData)
+        XCTAssertNotNil(savedData, "savedData should not be nil")
         
         /// Decode the savedData into an array of Person objects
         let decodedList = try? JSONDecoder().decode([Person].self, from: savedData!)
         
         /// Assert that the decodedList is equal to the original peopleList
-        XCTAssertEqual(decodedList, peopleList)
+        XCTAssertEqual(decodedList, peopleList, "Retrieved list and original list should be same")
     }
 
     
@@ -82,7 +82,7 @@ final class PersistenceServiceTests: XCTestCase {
         // THEN
         
         /// Assert that the retrievedList is equal to the original peopleList
-        XCTAssertEqual(retrievedList, peopleList)
+        XCTAssertEqual(retrievedList, peopleList, "Retrieved list and original list should be same")
     }
 
     
@@ -97,7 +97,7 @@ final class PersistenceServiceTests: XCTestCase {
         
         // THEN
         /// Assert that the retrievedList is equal to an empty
-        XCTAssertEqual(retrievedList, [])
+        XCTAssertEqual(retrievedList, [], "Retrieved list and empty list should be same")
     }
     
     /// This is a test function for the `getPeopleList` function of the `PersistenceService` class. It tests whether the function can successfully return an empty list when invalid data is saved in UserDefault. Here's a breakdown of the different sections:
@@ -115,7 +115,7 @@ final class PersistenceServiceTests: XCTestCase {
         
         // THEN
         /// Assert that the retrievedList is equal to an empty
-        XCTAssertEqual(retrievedList, [])
+        XCTAssertEqual(retrievedList, [], "Retrieved list and empty list should be same")
     }
 
 }

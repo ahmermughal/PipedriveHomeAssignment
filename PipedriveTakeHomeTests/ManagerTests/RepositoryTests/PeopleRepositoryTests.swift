@@ -71,13 +71,13 @@ final class PeopleRepositoryTests: XCTestCase {
             .compactMap { $0 }
             .sink { data in
                 /// Ensure that `getAllPersons` is called once
-                XCTAssertEqual(self.mockNetworkManager.invokedGetAllPersonsCount, 1)
+                XCTAssertEqual(self.mockNetworkManager.invokedGetAllPersonsCount, 1, "getAllPersons function should be called once")
                 
                 /// Ensure that the received list is not empty
-                XCTAssertTrue(!data.0.isEmpty)
+                XCTAssertTrue(!data.0.isEmpty, "Retrieved List should not be empty")
                 
                 /// Ensure that the repoDataType is set to .Network
-                XCTAssertEqual(data.1, .Network)
+                XCTAssertEqual(data.1, .Network, "repoDataType should be .Network")
                 
                 /// Fulfill the expectation to indicate that the verification is complete
                 expectation.fulfill()
@@ -123,10 +123,10 @@ final class PeopleRepositoryTests: XCTestCase {
         repository.$peopleList
             .sink { _ in
                 /// Ensure that `getAllPersons` is called once
-                XCTAssertEqual(self.mockNetworkManager.invokedGetAllPersonsCount, 1)
+                XCTAssertEqual(self.mockNetworkManager.invokedGetAllPersonsCount, 1, "getAllPersons function should be called once")
                 
                 /// Ensure that `hasNext` is true
-                XCTAssertTrue(self.repository.hasNext)
+                XCTAssertTrue(self.repository.hasNext, "hasNext should be true")
                 
                 /// Fulfill the expectation to indicate that the verification is complete
                 expectation.fulfill()
@@ -163,10 +163,10 @@ final class PeopleRepositoryTests: XCTestCase {
             .sink { data in
                 
                 /// Ensure that `getAllPersons` is called once
-                XCTAssertEqual(self.mockNetworkManager.invokedGetAllPersonsCount, 1)
+                XCTAssertEqual(self.mockNetworkManager.invokedGetAllPersonsCount, 1, "getAllPersons function should be called once")
                 
                 /// Ensure that the received list is empty
-                XCTAssertTrue(data.0.isEmpty)
+                XCTAssertTrue(data.0.isEmpty, "Retrieved list should be empty")
                 
                 /// Fulfill the expectation to indicate that the verification is complete
                 expectation.fulfill()
@@ -208,13 +208,13 @@ final class PeopleRepositoryTests: XCTestCase {
             .sink { data in
                 
                 /// Ensure that `getPeopleList` is called once
-                XCTAssertEqual(self.mockPersistenceService.invokedGetPeopleListCount, 1)
+                XCTAssertEqual(self.mockPersistenceService.invokedGetPeopleListCount, 1, "getPeopleList function should be called once")
                 
                 /// Ensure that the received list count is 1
-                XCTAssertEqual(data.0.count, 1)
+                XCTAssertEqual(data.0.count, 1, "Retrieved list count should be 1")
                 
                 /// Ensure that the repoDataType is set to .Storage
-                XCTAssertEqual(data.1, .Storage)
+                XCTAssertEqual(data.1, .Storage, "repoDataType should be .Storage")
                 
                 /// Fulfill the expectation to indicate that the verification is complete
                 expectation.fulfill()
