@@ -11,6 +11,7 @@
 		AE0EC6262A513ACC00B0BCB2 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0EC6252A513ACC00B0BCB2 /* MockURLProtocol.swift */; };
 		AE0EC6282A513AFF00B0BCB2 /* ValidData.json in Resources */ = {isa = PBXBuildFile; fileRef = AE0EC6272A513AFF00B0BCB2 /* ValidData.json */; };
 		AE0EC62A2A513BBB00B0BCB2 /* InvalidData.json in Resources */ = {isa = PBXBuildFile; fileRef = AE0EC6292A513BBB00B0BCB2 /* InvalidData.json */; };
+		AE0EC6302A51529100B0BCB2 /* PersistenceServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0EC62F2A51529100B0BCB2 /* PersistenceServiceTests.swift */; };
 		AE1186AA2A508DCD0041C752 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1186A92A508DCD0041C752 /* PersistenceService.swift */; };
 		AE1186AD2A50930A0041C752 /* PeopleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1186AC2A50930A0041C752 /* PeopleRepository.swift */; };
 		AE1186AF2A50936C0041C752 /* PersistenceServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1186AE2A50936C0041C752 /* PersistenceServiceProtocol.swift */; };
@@ -60,6 +61,7 @@
 		AE0EC6252A513ACC00B0BCB2 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		AE0EC6272A513AFF00B0BCB2 /* ValidData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ValidData.json; sourceTree = "<group>"; };
 		AE0EC6292A513BBB00B0BCB2 /* InvalidData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = InvalidData.json; sourceTree = "<group>"; };
+		AE0EC62F2A51529100B0BCB2 /* PersistenceServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceServiceTests.swift; sourceTree = "<group>"; };
 		AE1186A92A508DCD0041C752 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		AE1186AC2A50930A0041C752 /* PeopleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleRepository.swift; sourceTree = "<group>"; };
 		AE1186AE2A50936C0041C752 /* PersistenceServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceServiceProtocol.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		AE0EC61A2A5139C000B0BCB2 /* PipedriveTakeHomeTests */ = {
 			isa = PBXGroup;
 			children = (
+				AE0EC62E2A51527C00B0BCB2 /* PersistenceTests */,
 				AE0EC6222A5139D500B0BCB2 /* NetworkTests */,
 			);
 			path = PipedriveTakeHomeTests;
@@ -130,6 +133,14 @@
 				AE0EC6292A513BBB00B0BCB2 /* InvalidData.json */,
 			);
 			path = NetworkTests;
+			sourceTree = "<group>";
+		};
+		AE0EC62E2A51527C00B0BCB2 /* PersistenceTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE0EC62F2A51529100B0BCB2 /* PersistenceServiceTests.swift */,
+			);
+			path = PersistenceTests;
 			sourceTree = "<group>";
 		};
 		AE1186A82A508DC00041C752 /* Persistence */ = {
@@ -527,6 +538,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE0EC6302A51529100B0BCB2 /* PersistenceServiceTests.swift in Sources */,
 				AE0EC6262A513ACC00B0BCB2 /* MockURLProtocol.swift in Sources */,
 				AE0EC6242A513A0800B0BCB2 /* NetworkServiceTests.swift in Sources */,
 			);

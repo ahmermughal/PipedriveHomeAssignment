@@ -10,7 +10,7 @@ import Combine
 
 class PersistenceService : PersistenceServiceProtocol{
     
-    private static let peopleListKey : String = "PeopleList"
+    static let peopleListKey : String = "PeopleList"
     
     static let shared = PersistenceService()
     
@@ -30,23 +30,7 @@ class PersistenceService : PersistenceServiceProtocol{
         do {
             return try JSONDecoder().decode([Person].self, from: data)
         } catch {
-            print(error)
             return []
-        }
-    }
-    
-    func getPeopleList() -> AnyPublisher<[Person], NetworkError>{
-        
-        guard let data = UserDefaults.standard.data(forKey: PersistenceService.peopleListKey) else { return CurrentValueSubject([]).eraseToAnyPublisher() }
-        
-        do {
-            let personList = try JSONDecoder().decode([Person].self, from: data)
-            
-            return CurrentValueSubject(personList).eraseToAnyPublisher()
-        } catch {
-            print(error)
-            return Fail(error: .dataParseError)
-                .eraseToAnyPublisher()
         }
     }
     
