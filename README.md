@@ -20,6 +20,8 @@ Following is a list of highlights in the code base:
   - Dynamic Type (Font)
   - Caching
   - Pagination
+  - Data Persistence
+  - Repository Pattern
 
 ### Languages and Tools:
   - Swift
