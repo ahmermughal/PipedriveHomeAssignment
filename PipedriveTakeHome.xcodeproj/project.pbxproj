@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE0EC6242A513A0800B0BCB2 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0EC6232A513A0800B0BCB2 /* NetworkServiceTests.swift */; };
+		AE0EC6262A513ACC00B0BCB2 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0EC6252A513ACC00B0BCB2 /* MockURLProtocol.swift */; };
+		AE0EC6282A513AFF00B0BCB2 /* ValidData.json in Resources */ = {isa = PBXBuildFile; fileRef = AE0EC6272A513AFF00B0BCB2 /* ValidData.json */; };
+		AE0EC62A2A513BBB00B0BCB2 /* InvalidData.json in Resources */ = {isa = PBXBuildFile; fileRef = AE0EC6292A513BBB00B0BCB2 /* InvalidData.json */; };
 		AE1186AA2A508DCD0041C752 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1186A92A508DCD0041C752 /* PersistenceService.swift */; };
 		AE1186AD2A50930A0041C752 /* PeopleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1186AC2A50930A0041C752 /* PeopleRepository.swift */; };
 		AE1186AF2A50936C0041C752 /* PersistenceServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1186AE2A50936C0041C752 /* PersistenceServiceProtocol.swift */; };
@@ -40,7 +44,22 @@
 		AEF976512A4F07F400C91E99 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF976502A4F07F400C91E99 /* CacheManager.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		AE0EC61D2A5139C000B0BCB2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEF205612A4ED80700CA99D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AEF205682A4ED80700CA99D1;
+			remoteInfo = PipedriveTakeHome;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		AE0EC6192A5139C000B0BCB2 /* PipedriveTakeHomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PipedriveTakeHomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE0EC6232A513A0800B0BCB2 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
+		AE0EC6252A513ACC00B0BCB2 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		AE0EC6272A513AFF00B0BCB2 /* ValidData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ValidData.json; sourceTree = "<group>"; };
+		AE0EC6292A513BBB00B0BCB2 /* InvalidData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = InvalidData.json; sourceTree = "<group>"; };
 		AE1186A92A508DCD0041C752 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		AE1186AC2A50930A0041C752 /* PeopleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleRepository.swift; sourceTree = "<group>"; };
 		AE1186AE2A50936C0041C752 /* PersistenceServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceServiceProtocol.swift; sourceTree = "<group>"; };
@@ -77,6 +96,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AE0EC6162A5139C000B0BCB2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AEF205662A4ED80700CA99D1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -87,6 +113,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE0EC61A2A5139C000B0BCB2 /* PipedriveTakeHomeTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE0EC6222A5139D500B0BCB2 /* NetworkTests */,
+			);
+			path = PipedriveTakeHomeTests;
+			sourceTree = "<group>";
+		};
+		AE0EC6222A5139D500B0BCB2 /* NetworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE0EC6232A513A0800B0BCB2 /* NetworkServiceTests.swift */,
+				AE0EC6252A513ACC00B0BCB2 /* MockURLProtocol.swift */,
+				AE0EC6272A513AFF00B0BCB2 /* ValidData.json */,
+				AE0EC6292A513BBB00B0BCB2 /* InvalidData.json */,
+			);
+			path = NetworkTests;
+			sourceTree = "<group>";
+		};
 		AE1186A82A508DC00041C752 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				AEF2056B2A4ED80700CA99D1 /* PipedriveTakeHome */,
+				AE0EC61A2A5139C000B0BCB2 /* PipedriveTakeHomeTests */,
 				AEF2056A2A4ED80700CA99D1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -192,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				AEF205692A4ED80700CA99D1 /* PipedriveTakeHome.app */,
+				AE0EC6192A5139C000B0BCB2 /* PipedriveTakeHomeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -377,6 +424,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AE0EC6182A5139C000B0BCB2 /* PipedriveTakeHomeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE0EC6212A5139C000B0BCB2 /* Build configuration list for PBXNativeTarget "PipedriveTakeHomeTests" */;
+			buildPhases = (
+				AE0EC6152A5139C000B0BCB2 /* Sources */,
+				AE0EC6162A5139C000B0BCB2 /* Frameworks */,
+				AE0EC6172A5139C000B0BCB2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE0EC61E2A5139C000B0BCB2 /* PBXTargetDependency */,
+			);
+			name = PipedriveTakeHomeTests;
+			productName = PipedriveTakeHomeTests;
+			productReference = AE0EC6192A5139C000B0BCB2 /* PipedriveTakeHomeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		AEF205682A4ED80700CA99D1 /* PipedriveTakeHome */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AEF2057D2A4ED80700CA99D1 /* Build configuration list for PBXNativeTarget "PipedriveTakeHome" */;
@@ -406,6 +471,10 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					AE0EC6182A5139C000B0BCB2 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = AEF205682A4ED80700CA99D1;
+					};
 					AEF205682A4ED80700CA99D1 = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -427,11 +496,21 @@
 			projectRoot = "";
 			targets = (
 				AEF205682A4ED80700CA99D1 /* PipedriveTakeHome */,
+				AE0EC6182A5139C000B0BCB2 /* PipedriveTakeHomeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AE0EC6172A5139C000B0BCB2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE0EC62A2A513BBB00B0BCB2 /* InvalidData.json in Resources */,
+				AE0EC6282A513AFF00B0BCB2 /* ValidData.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AEF205672A4ED80700CA99D1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -444,6 +523,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AE0EC6152A5139C000B0BCB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE0EC6262A513ACC00B0BCB2 /* MockURLProtocol.swift in Sources */,
+				AE0EC6242A513A0800B0BCB2 /* NetworkServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AEF205652A4ED80700CA99D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -482,6 +570,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		AE0EC61E2A5139C000B0BCB2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AEF205682A4ED80700CA99D1 /* PipedriveTakeHome */;
+			targetProxy = AE0EC61D2A5139C000B0BCB2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		AEF205772A4ED80700CA99D1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -494,6 +590,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		AE0EC61F2A5139C000B0BCB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7DQ27655C6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ahmerm.PipedriveTakeHomeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PipedriveTakeHome.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PipedriveTakeHome";
+			};
+			name = Debug;
+		};
+		AE0EC6202A5139C000B0BCB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7DQ27655C6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ahmerm.PipedriveTakeHomeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PipedriveTakeHome.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PipedriveTakeHome";
+			};
+			name = Release;
+		};
 		AEF2057B2A4ED80700CA99D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -620,8 +754,8 @@
 				INFOPLIST_FILE = PipedriveTakeHome/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -629,9 +763,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ahmerm.PipedriveTakeHome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -647,8 +784,8 @@
 				INFOPLIST_FILE = PipedriveTakeHome/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -656,15 +793,27 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ahmerm.PipedriveTakeHome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AE0EC6212A5139C000B0BCB2 /* Build configuration list for PBXNativeTarget "PipedriveTakeHomeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE0EC61F2A5139C000B0BCB2 /* Debug */,
+				AE0EC6202A5139C000B0BCB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AEF205642A4ED80700CA99D1 /* Build configuration list for PBXProject "PipedriveTakeHome" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
