@@ -11,6 +11,8 @@ import Foundation
 import Foundation
 import Combine
 
+/// The `NetworkService` class is responsible for handling network requests. It provides a method called `performRequest` that takes an apiType parameter representing the type of network request to be performed and a resultType parameter indicating the expected result type.
+/// The class acts as a central component for making network requests and simplifies the process of performing requests and handling responses in a decodable format.
 class NetworkService : NetworkServiceProtocol{
     
     
@@ -20,6 +22,13 @@ class NetworkService : NetworkServiceProtocol{
     }
     
 
+    /// This generic function performs a network request based on the provided NetworkRouter type. It creates a URL from the baseURL and path properties in the NetworkRouter, adds any specified parameters, sets the HTTP method and body, and adds headers to the request.
+    /// The URL request is then made using a shared URLSession and the response is decoded as the specified.
+    /// Decodable type T. Any errors during the request or decoding process are mapped to NetworkError and returned as a publisher.
+    /// The publisher is of type AnyPublisher<T, NetworkError> and is executed on the main dispatch queue.
+    ///
+    /// - Parameter apiType: API endpoint type
+    /// - Returns: A publisher of the Generic decodable object
     func performRequest<T:Decodable>(apiType: NetworkRouter, resultType: T.Type) -> AnyPublisher<T, NetworkError> {
         
         /// create baseURL from the baseURL string specified in the NetworkRouter protocol
@@ -72,7 +81,6 @@ class NetworkService : NetworkServiceProtocol{
         /// Set the HTTP body of the request to the data specified in the Network Router
         urlRequest.httpBody = apiType.bodyData
         //print("HTTPMethod Body: \(apiType.bodyData)")
-        
         
         //debugPrint("Request URL: \(urlRequest.url)")
         /// Use the shared URLSession to create a dataTaskPublisher with the URLRequest

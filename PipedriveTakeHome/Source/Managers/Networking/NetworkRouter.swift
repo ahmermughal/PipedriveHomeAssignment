@@ -7,16 +7,17 @@
 
 import Foundation
 
-
+/// Defines an enumeration named `NetworkRouter`" with a case: `getAllPersons`, This enumeration is used to handle different API routes in a network layer of an application.
 enum NetworkRouter {
     
     
     case getAllPersons(page: Int)
 
-    
+    // MARK: Base URL
     static let baseURL: String = "https://api.pipedrive.com/v1/"
 
-    
+    // MARK: Path
+    /// Defines the end point of an API based on the current enum case
     var path: String {
         switch self {
             
@@ -26,6 +27,7 @@ enum NetworkRouter {
         }
     }
     
+    /// Enumeration to represent different HTTP methods.
     private enum MethodType : String{
         
         /// The GET method is used to retrieve data from a server.
@@ -41,6 +43,8 @@ enum NetworkRouter {
         case update = "UPDATE"
     }
     
+    // MARK: - HTTPMethod
+    /// Defines the methods type based on the current enum case
     var method: String {
         switch self {
         case .getAllPersons:
@@ -49,6 +53,8 @@ enum NetworkRouter {
         }
     }
     
+    // MARK: - Parameters
+    /// Defines parameters an endpoint takes based on the current enum case.
     var parameters: [String: Any]? {
         switch self {
         case .getAllPersons(let page):
@@ -58,6 +64,8 @@ enum NetworkRouter {
         }
     }
     
+    // MARK: - BodyData
+    /// Defines the body data an API will have and encodes the given model passed in the case parameter to Data
     var bodyData: Data?{
         switch self{
         case .getAllPersons:

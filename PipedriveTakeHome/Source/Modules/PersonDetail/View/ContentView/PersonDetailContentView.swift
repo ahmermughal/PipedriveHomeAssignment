@@ -9,6 +9,8 @@ import UIKit
 
 class PersonDetailContentView: UIView {
 
+    // MARK: Views
+    
     let profileImageView = UIImageView()
     let nameLabel = UILabel()
     let organizationLabel = UILabel()
@@ -16,17 +18,25 @@ class PersonDetailContentView: UIView {
     let tableView = UITableView()
     let emptyImageView = UIImageView()
     
+    
+    // MARK: Init
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
+        /// Calls the setupView() function to configure the view's background color.
         setupView()
         
+        /// Calls the setupLabels() function to configure the appearance of the nameLabel and organizationLabel.
         setupLabels()
         
+        /// Calls the setupImageViews() function to configure the appearance of the profileImageView and emptyImageView.
         setupImageViews()
         
+        /// Calls the setupTableView() function to configure the appearance and constraints of the tableView.
         setupTableView()
         
+        /// Calls the layoutUI() function to set up the layout constraints for all the subviews.
         layoutUI()
     }
     
@@ -34,10 +44,14 @@ class PersonDetailContentView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Private functions
+    
+    /// Configures the background color of the view.
     private func setupView(){
         backgroundColor = .systemBackground
     }
     
+    /// Configures the appearance of the nameLabel and organizationLabel.
     private func setupLabels(){
         
         nameLabel.font = UIFont.preferredFont(forTextStyle: .title1)
@@ -49,6 +63,7 @@ class PersonDetailContentView: UIView {
         
     }
     
+    /// Configures the appearance of the profileImageView and emptyImageView.
     private func setupImageViews(){
         profileImageView.layer.cornerRadius = ViewSizeConstant.personDetailContentViewProfileImageSize.height / 2
         profileImageView.image = ImageConstant.profilePlaceholder
@@ -59,6 +74,7 @@ class PersonDetailContentView: UIView {
         emptyImageView.isHidden = true
     }
     
+    /// Configures the appearance and constraints of the tableView.
     private func setupTableView() {
         tableViewContainer.backgroundColor = .secondarySystemBackground
         
@@ -77,6 +93,7 @@ class PersonDetailContentView: UIView {
     }
     
     
+    /// Sets up the layout constraints for all the subviews.
     private func layoutUI(){
         
         let views = [profileImageView, nameLabel, organizationLabel, tableViewContainer, emptyImageView]

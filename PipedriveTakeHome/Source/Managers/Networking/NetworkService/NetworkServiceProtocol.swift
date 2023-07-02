@@ -8,6 +8,8 @@
 import Foundation
 import Combine
 
+/// This protocol is used to act as a blueprint for the class or struct that implements it.
+/// It allows to write easily testable code as we can now mock the service using this protocol
 protocol NetworkServiceProtocol{
     
 

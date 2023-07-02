@@ -10,6 +10,8 @@ import Combine
 
 class PeopleListVC: DataLoadingViewController {
 
+    // MARK: Varaibles
+    
     private let contentView = PeopleListContentView()
     
     private var subscriptions: [AnyCancellable] = []
@@ -17,6 +19,8 @@ class PeopleListVC: DataLoadingViewController {
     private var dataSource: UITableViewDiffableDataSource<Section, Person>!
     
     private let viewModel : PeopleListViewModel
+    
+    // MARK: Init
     
     init(viewModel : PeopleListViewModel = PeopleListViewModel()) {
         self.viewModel = viewModel
@@ -28,6 +32,9 @@ class PeopleListVC: DataLoadingViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Override Functions
+    
+    /// Set the PeopleListContentView instance as the view of the view controller
     override func loadView() {
         self.view = contentView
     }
@@ -35,29 +42,38 @@ class PeopleListVC: DataLoadingViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /// Configure the view controller/
         configureVC()
         
+        /// Configure the table view/
         configureTableView()
         
+        /// Configure the data source/
         configureDataSource()
         
+        /// Set up bindings with the view model/
         setupBinding()
         
+        /// Set up listeners for events/
         setupListeners()
         
+        /// Fetch the initial list of people/
         viewModel.getPeople()
         
     }
     
+    // MARK: Private functions
     
     private func configureVC(){
         
         title = StringConstant.people
         
+        /// Set the preference for large titles in the navigation bar
         navigationController?.navigationBar.prefersLargeTitles = true
         
     }
     
+    /// Sets up bindings between the view model and the view controller.
     private func setupBinding(){
         
         viewModel.$peopleList
@@ -80,6 +96,7 @@ class PeopleListVC: DataLoadingViewController {
         
     }
     
+    /// Setup listerns to listen for changes when tableview is pulled down to refresh
     private func setupListeners(){
         
         contentView.refreshControl.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
@@ -95,21 +112,27 @@ class PeopleListVC: DataLoadingViewController {
         contentView.tableView.delegate = self
     }
     
+    /// Setup TableViewDiffiableDataSource to display data in the tableview
+    /// DiffiableDataSource is used so tableview can be updated when new data is loaded in pagination
     private func configureDataSource() {
         dataSource = UITableViewDiffableDataSource(tableView: contentView.tableView, cellProvider: { tableView, indexPath, value in
+            
+            /// Dequeue a reusable cell with the identifier and cast it to PersonCell
             let cell = tableView.dequeueReusableCell(withIdentifier: PersonCell.reuseID, for: indexPath) as! PersonCell
             
+            /// Set the person data for the cell/
             cell.set(person: value)
             
             return cell
         })
     }
     
-    
+    /// Update the data displayed in the table view/
     private func handlePeopleListData(listData: [Person]){
        updateData(on: listData)
     }
     
+    /// Hide or show the image view based on whether the list is empty or not
     private func handleListIsEmpty(empty: Bool){
         contentView.imageView.isHidden = !empty
     }
@@ -118,10 +141,13 @@ class PeopleListVC: DataLoadingViewController {
         
         switch state {
         case .empty:
+            /// Set up the view to represent an empty list state
             contentView.setupEmptyListView()
         case .noInternet:
+            /// Set up the view to represent a no internet state
             contentView.setupNoInternetView()
         case .allGood:
+            // Hide the image view
             contentView.imageView.isHidden = true
         }
         
@@ -159,22 +185,30 @@ class PeopleListVC: DataLoadingViewController {
     }
     
     @objc private func refreshTableView(){
+        /// Reset the data in the view model/
         viewModel.resetData()
+        /// Fetch the updated list of people/
         viewModel.getPeople()
     }
 
 }
 
+// MARK: UITableViewDelegate
 extension PeopleListVC : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        /// Get the selected person from the people list
         let person = viewModel.peopleList[indexPath.row]
+        /// Push to the person detail view controller with the selected person
         pushToPersonDetailVC(person: person)
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        /// Get the vertical content offset of the scroll view
         let offsetY = scrollView.contentOffset.y
+        /// Get the height of the scrollable content
         let contentHeight = scrollView.contentSize.height
+        /// Get the visible height of the scroll view
         let height = scrollView.frame.size.height
         
         if offsetY > contentHeight - height {
@@ -183,6 +217,7 @@ extension PeopleListVC : UITableViewDelegate {
                 return
             }
             
+            /// Fetch the next set of people when reaching the end of the table view
             viewModel.getPeople()
         }
     }

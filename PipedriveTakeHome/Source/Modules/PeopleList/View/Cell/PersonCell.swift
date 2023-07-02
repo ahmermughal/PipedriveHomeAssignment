@@ -12,13 +12,15 @@ class PersonCell: UITableViewCell {
     static let reuseID = "PersonCell"
 
     
+    // MARK: Views
+    
     private let containerView = UIView()
     private let nameLabel = UILabel()
     private let organizationLabel = UILabel()
     private let profileImageView = UIImageView()
     private let labelStackView = UIStackView()
 
-    
+    // MARK: Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -39,12 +41,18 @@ class PersonCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Functions
+    
+    /// Defines a method named `set(person:)` to set the values of the labels and imageviews based on a given Person object.
+    /// - Parameter contact: Person used to set cells data
     func set(person: Person){
         nameLabel.text = person.name
         organizationLabel.text = person.organizationName ?? "NA"
         profileImageView.setImageWithUrl(url: person.picture?.pictures?.smallImage ?? "")
     }
     
+    
+    // MARK: Private Functions
     
     private func setupView() {
         /// Set the background color of the cell to clear
@@ -91,6 +99,7 @@ class PersonCell: UITableViewCell {
         ])
     }
     
+    /// Setup layout constraints of profileImageView and labelStackView
     private func layoutUI() {
         let views = [profileImageView, labelStackView]
         
